@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "275328051052",
+    "project_id": "smiley-app-gdsc",
+    "storage_bucket": "smiley-app-gdsc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:275328051052:android:a3441ba1ea298370987549",
+        "android_client_info": {
+          "package_name": "com.example.smiley"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbLDJfGOcDqPKMzUae7LYBgcuskcxgHhs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

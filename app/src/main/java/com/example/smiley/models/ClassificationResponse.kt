@@ -1,0 +1,7 @@
+package com.example.smiley.models
+
+data class ClassificationResponse(
+    val classification: String,
+    val confident_score: Double,
+    val image_path: String
+)

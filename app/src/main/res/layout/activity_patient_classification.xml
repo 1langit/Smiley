@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.PatientClassificationActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:paddingHorizontal="28dp">
+
+    <TextView
+        style="@style/TextHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Classification"
+        android:layout_marginTop="12dp" />
+
+    <ImageView
+        android:id="@+id/img_teeth"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/placeholder"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="AI Classification Result:"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="This is the result of classification. This is the result of classification. This is the result of classification." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Still not statisfied?"
+        android:layout_marginTop="60dp" />
+
+    <Button
+        android:id="@+id/btn_consult"
+        style="@style/ButtonPrimary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consult with Dentist"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/ButtonSecondary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+
+</LinearLayout>

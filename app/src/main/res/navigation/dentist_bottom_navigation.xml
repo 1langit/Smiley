@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dentist_bottom_navigation"
+    app:startDestination="@id/dentistHomeFragment">
+
+    <fragment
+        android:id="@+id/dentistHomeFragment"
+        android:name="com.example.smiley.fragments.DentistHomeFragment"
+        android:label="fragment_dentist_home"
+        tools:layout="@layout/fragment_dentist_home" />
+    <fragment
+        android:id="@+id/dentistChatFragment"
+        android:name="com.example.smiley.fragments.DentistChatFragment"
+        android:label="fragment_dentist_chat"
+        tools:layout="@layout/fragment_dentist_chat" />
+    <fragment
+        android:id="@+id/dentistSettingsFragment"
+        android:name="com.example.smiley.fragments.DentistSettingsFragment"
+        android:label="fragment_dentist_settings"
+        tools:layout="@layout/fragment_dentist_settings" />
+</navigation>

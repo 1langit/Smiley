@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/patient_bottom_navigation"
+    app:startDestination="@id/patientHomeFragment">
+
+    <fragment
+        android:id="@+id/patientHomeFragment"
+        android:name="com.example.smiley.fragments.PatientHomeFragment"
+        android:label="fragment_patient_home"
+        tools:layout="@layout/fragment_patient_home" >
+        <action
+            android:id="@+id/action_patientHomeFragment_to_patientSearchDentistFragment"
+            app:destination="@id/patientSearchDentistFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/patientCaptureFragment"
+        android:name="com.example.smiley.fragments.PatientCaptureFragment"
+        android:label="fragment_patient_capture"
+        tools:layout="@layout/fragment_patient_capture" />
+    <fragment
+        android:id="@+id/patientSettingsFragment"
+        android:name="com.example.smiley.fragments.PatientSettingsFragment"
+        android:label="fragment_patient_settings"
+        tools:layout="@layout/fragment_patient_settings" />
+    <fragment
+        android:id="@+id/patientSearchDentistFragment"
+        android:name="com.example.smiley.fragments.PatientSearchDentistFragment"
+        android:label="fragment_patient_search_dentist"
+        tools:layout="@layout/fragment_patient_search_dentist" />
+</navigation>

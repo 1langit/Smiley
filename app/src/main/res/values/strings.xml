@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Smiley</string>
+    <string name="capture_hint">Select an image and tap \'Classify\' to check \ndental condition</string>
+    <string name="journal_info">Each color of the box represents the \“mood\” of the date. The better the mood the bigger the score, which means you have better dental health for the day! Click on the individual date to learn more.</string>
+
+    <string-array name="sex">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
