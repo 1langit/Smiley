@@ -22,7 +22,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activities.ReadArticleActivity"
+            android:name=".activities.ReadEducationActivity"
             android:exported="false" />
         <activity
             android:name=".activities.WriteEducationActivity"

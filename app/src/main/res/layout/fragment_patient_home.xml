@@ -53,7 +53,16 @@
                     style="@style/TextHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="\n\nYour teeth data"
+                    android:layout_marginTop="16dp"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="28sp" />
+
+                <TextView
+                    style="@style/TextHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Days of no dental problem"
                     android:textColor="@color/white" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -132,7 +141,7 @@
                     android:layout_marginBottom="12dp"
                     android:layout_marginHorizontal="28dp"
                     android:drawableEnd="@drawable/ic_round_arrow_forward"
-                    android:text="See more" />
+                    android:text="Daily checkup" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

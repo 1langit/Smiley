@@ -31,14 +31,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txt_title" />
 
-    <CalendarView
-        android:id="@+id/calendar_view"
+<!--    <CalendarView-->
+<!--        android:id="@+id/calendar_view"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:background="@color/white_variant"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.5"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/txt_title" />-->
+
+    <TextView
+        android:id="@+id/txt_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:background="@color/white_variant"
+        android:text="Dental checkup 29 feb 24"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
@@ -47,17 +58,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="0dp"
-        android:text="I have brushed my teeth"
+        android:text="I brushed my teeth twice a day"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/check3"
-        app:layout_constraintTop_toBottomOf="@+id/calendar_view" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_date" />
 
     <CheckBox
         android:id="@+id/check2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="0dp"
-        android:text="I have a dental problem"
+        android:text="I don\'t have a dental problem"
         app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check1" />
 
@@ -67,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:minHeight="0dp"
-        android:text="I have talked with the dentist"
+        android:text="I consume less sugary and acidic\nfoods/drinks"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

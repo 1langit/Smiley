@@ -15,9 +15,9 @@
         android:name="com.example.smiley.fragments.DentistChatFragment"
         android:label="fragment_dentist_chat"
         tools:layout="@layout/fragment_dentist_chat" />
-    <fragment
-        android:id="@+id/dentistSettingsFragment"
-        android:name="com.example.smiley.fragments.DentistSettingsFragment"
-        android:label="fragment_dentist_settings"
-        tools:layout="@layout/fragment_dentist_settings" />
+<!--    <fragment-->
+<!--        android:id="@+id/dentistSettingsFragment"-->
+<!--        android:name="com.example.smiley.fragments.DentistSettingsFragment"-->
+<!--        android:label="fragment_dentist_settings"-->
+<!--        tools:layout="@layout/fragment_dentist_settings" />-->
 </navigation>

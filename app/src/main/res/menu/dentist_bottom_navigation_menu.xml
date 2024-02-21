@@ -11,8 +11,8 @@
         android:icon="@drawable/ic_round_chat"
         android:title="Chat" />
 
-    <item
-        android:id="@+id/dentistSettingsFragment"
-        android:icon="@drawable/ic_round_settings"
-        android:title="Settings" />
+<!--    <item-->
+<!--        android:id="@+id/dentistSettingsFragment"-->
+<!--        android:icon="@drawable/ic_round_settings"-->
+<!--        android:title="Settings" />-->
 </menu>

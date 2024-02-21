@@ -32,16 +32,16 @@ class DentistLocationActivity : AppCompatActivity() {
                 val name = intent.getStringExtra("name")
                 val city = intent.getStringExtra("city")
                 val email = intent.getStringExtra("email")
-                val address = edtAddress.text.toString()
-                val buildingNumber = edtBuildingNum.text.toString()
+                val clinicName = edtClinicName.text.toString()
+                val clinicAddress = edtClinicAddress.text.toString()
 
-                if (address.isBlank()) {
-                    Toast.makeText(this@DentistLocationActivity, "Please fill out the address", Toast.LENGTH_SHORT).show()
+                if (clinicName.isBlank() || clinicAddress.isBlank()) {
+                    Toast.makeText(this@DentistLocationActivity, "Please fill in all required info", Toast.LENGTH_SHORT).show()
                 } else {
                     val uid = firebaseAuth.currentUser?.uid!!
                     firestore.collection("dentist")
                         .document(uid)
-                        .set(Dentist(uid, name!!, city!!, address, buildingNumber, email!!))
+                        .set(Dentist(uid, name!!, city!!, clinicName, clinicAddress, email!!))
                         .addOnFailureListener {
                             Toast.makeText(this@DentistLocationActivity, it.message, Toast.LENGTH_SHORT).show()
                         }.addOnSuccessListener {

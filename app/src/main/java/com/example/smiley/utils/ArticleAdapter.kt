@@ -11,7 +11,7 @@ private typealias OnClickArticle = (Article) -> Unit
 class ArticleAdapter(
     private val articleList: List<Article>,
     private val onClickArticle: OnClickArticle
-):RecyclerView.Adapter<ArticleAdapter.ItemArticleViewHolder>() {
+): RecyclerView.Adapter<ArticleAdapter.ItemArticleViewHolder>() {
 
     inner class ItemArticleViewHolder(private val binding: ItemArticleBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(article: Article) {

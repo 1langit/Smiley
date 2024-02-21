@@ -1,22 +1,20 @@
 package com.example.smiley.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.smiley.R
-import com.example.smiley.databinding.ActivityReadArticleBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.smiley.databinding.ActivityReadEducationBinding
 import com.example.smiley.models.Article
-import com.example.smiley.models.Dentist
 import com.google.firebase.firestore.FirebaseFirestore
 
-class ReadArticleActivity : AppCompatActivity() {
+class ReadEducationActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityReadArticleBinding
+    private lateinit var binding: ActivityReadEducationBinding
     private lateinit var firestore: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityReadArticleBinding.inflate(layoutInflater)
+        binding = ActivityReadEducationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         firestore = FirebaseFirestore.getInstance()
@@ -25,7 +23,7 @@ class ReadArticleActivity : AppCompatActivity() {
             .document(intent.getStringExtra("id")!!)
             .get()
             .addOnFailureListener {
-                Toast.makeText(this@ReadArticleActivity, it.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ReadEducationActivity, it.message, Toast.LENGTH_SHORT).show()
             }.addOnSuccessListener {
                 val article = it.toObject(Article::class.java)!!
                 with(binding) {

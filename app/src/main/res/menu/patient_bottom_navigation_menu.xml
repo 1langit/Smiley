@@ -12,7 +12,7 @@
         android:title="Capture" />
 
     <item
-        android:id="@+id/patientSettingsFragment"
-        android:icon="@drawable/ic_round_settings"
-        android:title="Settings" />
+        android:id="@+id/patientHistoryFragment"
+        android:icon="@drawable/ic_round_time"
+        android:title="History" />
 </menu>

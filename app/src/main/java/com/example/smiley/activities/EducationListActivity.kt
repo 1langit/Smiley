@@ -1,13 +1,9 @@
 package com.example.smiley.activities
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.view.inputmethod.EditorInfo
-import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -60,7 +56,7 @@ class EducationListActivity : AppCompatActivity() {
 //            }
 
             val articleAdapter = ArticleAdapter(articleList) { article ->
-                val newIntent = Intent(this@EducationListActivity, ReadArticleActivity::class.java)
+                val newIntent = Intent(this@EducationListActivity, ReadEducationActivity::class.java)
                 newIntent.putExtra("id", article.id)
                 startActivity(newIntent)
             }
@@ -70,7 +66,7 @@ class EducationListActivity : AppCompatActivity() {
                     adapter = articleAdapter
                     layoutManager = LinearLayoutManager(this@EducationListActivity)
                 }
-                txtNotFound.visibility = View.GONE
+                txtNotFound.visibility = if (articleList.isEmpty()) View.VISIBLE else View.GONE
             }
         }
     }

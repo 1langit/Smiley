@@ -20,10 +20,10 @@
         android:label="fragment_patient_capture"
         tools:layout="@layout/fragment_patient_capture" />
     <fragment
-        android:id="@+id/patientSettingsFragment"
-        android:name="com.example.smiley.fragments.PatientSettingsFragment"
-        android:label="fragment_patient_settings"
-        tools:layout="@layout/fragment_patient_settings" />
+        android:id="@+id/patientHistoryFragment"
+        android:name="com.example.smiley.fragments.PatientHistoryFragment"
+        android:label="fragment_patient_history"
+        tools:layout="@layout/fragment_patient_history" />
     <fragment
         android:id="@+id/patientSearchDentistFragment"
         android:name="com.example.smiley.fragments.PatientSearchDentistFragment"

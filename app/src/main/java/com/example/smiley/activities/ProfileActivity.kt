@@ -46,7 +46,7 @@ class ProfileActivity : AppCompatActivity() {
                             val user = it.toObject(Dentist::class.java)
                             txtName.text = user?.name
                             txtEmail.text = user?.email
-                            txtInfo.text = "${user?.city}, ${user?.address}"
+                            txtInfo.text = "${user?.clinicName}\n${user?.clinicAddress}\n${user?.city}"
                         }
                     }
                 }

@@ -7,13 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.smiley.R
 import com.example.smiley.activities.EducationListActivity
 import com.example.smiley.activities.ProfileActivity
-import com.example.smiley.activities.ReadArticleActivity
+import com.example.smiley.activities.ReadEducationActivity
 import com.example.smiley.activities.WriteEducationActivity
 import com.example.smiley.databinding.FragmentDentistHomeBinding
 import com.example.smiley.models.Article
@@ -62,7 +60,7 @@ class DentistHomeFragment : Fragment() {
     private fun showMyArticles() {
         articeListLiveData.observe(viewLifecycleOwner) { articleList ->
             val articleAdapter = ArticleAdapter(articleList) { article ->
-                val newIntent = Intent(requireContext(), ReadArticleActivity::class.java)
+                val newIntent = Intent(requireContext(), ReadEducationActivity::class.java)
                 newIntent.putExtra("id", article.id)
                 startActivity(newIntent)
             }

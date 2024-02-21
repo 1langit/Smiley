@@ -16,8 +16,11 @@ import androidx.fragment.app.Fragment
 import com.example.smiley.R
 import com.example.smiley.activities.PatientClassificationActivity
 import com.example.smiley.databinding.FragmentPatientCaptureBinding
+import com.example.smiley.models.Classification
 import com.example.smiley.models.ClassificationResponse
 import com.example.smiley.network.ApiClient
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -27,10 +30,14 @@ import retrofit2.Response
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class PatientCaptureFragment : Fragment() {
 
     private lateinit var binding: FragmentPatientCaptureBinding
+    private lateinit var firestore: FirebaseFirestore
+    private val uid = FirebaseAuth.getInstance().currentUser?.uid!!
     private var imageFile: File? = null
 
     override fun onCreateView(
@@ -38,6 +45,7 @@ class PatientCaptureFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentPatientCaptureBinding.inflate(layoutInflater)
+        firestore = FirebaseFirestore.getInstance()
 
         with(binding) {
             btnSelect.setOnClickListener {
@@ -135,6 +143,7 @@ class PatientCaptureFragment : Fragment() {
             override fun onResponse(call: Call<ClassificationResponse>, response: Response<ClassificationResponse>) {
                 val result = response.body()
                 showResult(file, result!!.classification, result!!.elaboration)
+                saveResult(result)
             }
 
             override fun onFailure(call: Call<ClassificationResponse>, t: Throwable) {
@@ -166,8 +175,28 @@ class PatientCaptureFragment : Fragment() {
                 progressBar.visibility = View.GONE
                 btnSelect.isEnabled = true
                 btnClassify.isEnabled = true
-                imgTeeth.setImageResource(R.drawable.placeholder)
+                imgTeeth.setImageResource(R.drawable.ic_capture)
             }
         }
+    }
+
+    private fun saveResult(result: ClassificationResponse) {
+        val classification = Classification(
+            uid = uid,
+            date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm")),
+            classification = result.classification,
+            elaboration = result.elaboration,
+            image_path = result.image_path
+        )
+        firestore.collection("classification")
+            .add(classification)
+            .addOnFailureListener {
+                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+            }.addOnSuccessListener { document ->
+                classification.id = document.id
+                document.update("id", classification.id).addOnFailureListener {
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+            }
     }
 }
