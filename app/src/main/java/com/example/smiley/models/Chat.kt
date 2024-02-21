@@ -2,10 +2,8 @@ package com.example.smiley.models
 
 data class Chat(
     var id: String = "",
-    var uid: String = "",
-    var type: String = "",
-    var name: String = "",
+    var senderUid: String = "",
+    var recieverUid: String = "",
     var message: String = "",
-    var time: String = "",
-    var read: Boolean = false,
+    var time: String = ""
 )

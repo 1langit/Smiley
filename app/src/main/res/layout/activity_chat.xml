@@ -64,7 +64,10 @@
         style="@style/ButtonIcon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
         android:drawableEnd="@drawable/ic_round_send"
+        android:padding="4dp"
+        app:cornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

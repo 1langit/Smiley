@@ -13,8 +13,8 @@
         style="@style/TextHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Journal"
         android:layout_marginTop="12dp"
+        android:text="Journal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -35,6 +35,8 @@
         android:id="@+id/calendar_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white_variant"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,24 +46,19 @@
         android:id="@+id/check1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
         android:minHeight="0dp"
         android:text="I have brushed my teeth"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/calendar_view" />
 
     <CheckBox
         android:id="@+id/check2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
         android:minHeight="0dp"
         android:text="I have a dental problem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check1" />
 
     <CheckBox
@@ -80,12 +77,9 @@
         android:id="@+id/check4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="24dp"
         android:minHeight="0dp"
         android:text="I have a check up for the day"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check3" />
 
     <Button
@@ -93,8 +87,8 @@
         style="@style/ButtonPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
         android:layout_marginTop="40dp"
+        android:text="Save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

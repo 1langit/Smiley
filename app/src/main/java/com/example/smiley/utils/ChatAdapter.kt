@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.smiley.databinding.ItemChatLeftBinding
 import com.example.smiley.databinding.ItemChatRightBinding
 import com.example.smiley.models.Chat
+import com.google.firebase.auth.FirebaseAuth
 
-class ChatAdapter : RecyclerView.Adapter<ViewHolder>() {
+class ChatAdapter(
+    private val listOfChat: List<Chat>
+) : RecyclerView.Adapter<ViewHolder>() {
 
-    private val listOfChat = mutableListOf<Chat>()
+    private val currentUserId = FirebaseAuth.getInstance().currentUser?.uid
     companion object {
         const val RIGHT_VIEW = 1
         const val LEFT_VIEW = 2
@@ -35,21 +38,14 @@ class ChatAdapter : RecyclerView.Adapter<ViewHolder>() {
     override fun getItemCount(): Int = listOfChat.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        if (listOfChat[position].type == "SEND")
+        if (listOfChat[position].senderUid == currentUserId)
             (holder as RightViewHolder).bind(listOfChat[position])
         else
             (holder as LeftViewHolder).bind(listOfChat[position])
     }
 
     override fun getItemViewType(position: Int): Int {
-        return if (listOfChat[position].type == "SEND") RIGHT_VIEW else LEFT_VIEW
-    }
-
-    @SuppressLint("NotifyDataSetChanged")
-    fun setData(list: List<Chat>) {
-        listOfChat.clear()
-        listOfChat.addAll(list)
-        notifyDataSetChanged()
+        return if (listOfChat[position].senderUid == currentUserId) RIGHT_VIEW else LEFT_VIEW
     }
 
     inner class LeftViewHolder(private val binding: ItemChatLeftBinding) : ViewHolder(binding.root) {

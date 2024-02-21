@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/CardOutlined"
+    style="@style/CardSecondary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginVertical="4dp">
@@ -25,18 +25,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Contact Name"
-            android:textSize="20sp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toTopOf="@+id/txt_info"
             app:layout_constraintStart_toEndOf="@+id/img_profile"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
 
         <TextView
             android:id="@+id/txt_info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black_subtle"
-            android:text="Info"
             android:layout_marginStart="8dp"
+            android:text="Info"
+            android:textColor="@color/black_subtle"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_profile"
             app:layout_constraintTop_toBottomOf="@+id/txt_name" />

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.smiley.activities.PatientEducationActivity
+import com.example.smiley.activities.EducationListActivity
 import com.example.smiley.activities.PatientJournalActivity
 import com.example.smiley.activities.ProfileActivity
 import com.example.smiley.databinding.FragmentPatientHomeBinding
@@ -32,7 +32,7 @@ class PatientHomeFragment : Fragment() {
             }
 
             btnEducation.setOnClickListener {
-                startActivity(Intent(requireContext(), PatientEducationActivity::class.java))
+                startActivity(Intent(requireContext(), EducationListActivity::class.java))
             }
 
             btnJournal.setOnClickListener {

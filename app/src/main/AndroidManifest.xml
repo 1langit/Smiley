@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
@@ -20,7 +20,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Smiley"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.ReadArticleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.WriteEducationActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.SmileyWrappedActivity"
             android:exported="false" />
@@ -28,7 +34,7 @@
             android:name=".activities.PatientJournalActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.PatientEducationActivity"
+            android:name=".activities.EducationListActivity"
             android:exported="false" />
         <activity
             android:name=".activities.DentistLocationActivity"
@@ -65,7 +71,7 @@
             android:exported="false" />
         <activity
             android:name=".activities.WelcomeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

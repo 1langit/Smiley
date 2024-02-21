@@ -134,19 +134,20 @@ class PatientCaptureFragment : Fragment() {
         call.enqueue(object : Callback<ClassificationResponse> {
             override fun onResponse(call: Call<ClassificationResponse>, response: Response<ClassificationResponse>) {
                 val result = response.body()
-                showResult(file, result!!.classification)
+                showResult(file, result!!.classification, result!!.elaboration)
             }
 
             override fun onFailure(call: Call<ClassificationResponse>, t: Throwable) {
-                showResult(file, "An error occured:\n$t")
+                showResult(file, "", "An error occured:\n$t")
             }
         })
     }
 
-    private fun showResult(file: File, result: String) {
+    private fun showResult(file: File, result: String, description: String) {
         val newIntent = Intent(requireContext(), PatientClassificationActivity::class.java)
         newIntent.putExtra("image", file.absolutePath)
         newIntent.putExtra("result", result)
+        newIntent.putExtra("description", description)
         startActivity(newIntent)
         showLoadingState(false)
     }

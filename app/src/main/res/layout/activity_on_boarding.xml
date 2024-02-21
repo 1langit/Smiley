@@ -26,9 +26,10 @@
         android:id="@+id/txt_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="40dp"
-        android:text="Smiley is a smart dental app that helps you manage your dental hygiene. Please login or sign up to continue"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginBottom="40dp"
+        android:text="Smiley is a smart dental app that helps you manage your dental hygiene. Please login or sign up to continue" />
 
     <Button
         android:id="@+id/btn_login"

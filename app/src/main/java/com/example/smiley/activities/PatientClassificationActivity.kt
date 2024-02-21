@@ -20,6 +20,7 @@ class PatientClassificationActivity : AppCompatActivity() {
         with(binding) {
             imgTeeth.setImageBitmap(BitmapFactory.decodeFile(intent.getStringExtra("image")))
             txtResult.text = intent.getStringExtra("result")
+            txtDescription.text = intent.getStringExtra("description")
 
             btnConsult.setOnClickListener {
                 val newIntent = Intent(this@PatientClassificationActivity, PatientDashboardActivity::class.java)

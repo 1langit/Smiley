@@ -37,9 +37,6 @@ class PatientSearchDentistFragment : Fragment() {
             btnBack.setOnClickListener {
                 findNavController().navigateUp()
             }
-            cardMap.setOnClickListener {
-                startActivity(Intent(requireContext(), ChatActivity::class.java))
-            }
         }
         return binding.root
     }
@@ -52,9 +49,12 @@ class PatientSearchDentistFragment : Fragment() {
                 startActivity(newIntent)
             }
 
-            binding.rvDentists.apply {
-                adapter = dentistAdapter
-                layoutManager = LinearLayoutManager(requireContext())
+            with(binding) {
+                rvDentists.apply {
+                    adapter = dentistAdapter
+                    layoutManager = LinearLayoutManager(requireContext())
+                }
+                txtEmpty.visibility = if (dentistList.isEmpty()) View.VISIBLE else View.GONE
             }
         }
     }

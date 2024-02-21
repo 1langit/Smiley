@@ -5,8 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.smiley.databinding.ActivityProfileBinding
+import com.example.smiley.models.Dentist
+import com.example.smiley.models.Patient
 import com.example.smiley.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -23,6 +27,30 @@ class ProfileActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
 
         with(binding) {
+            FirebaseFirestore.getInstance()
+                .collection(prefManager.getRole())
+                .document(firebaseAuth.currentUser?.uid!!)
+                .get()
+                .addOnFailureListener {
+                    Toast.makeText(this@ProfileActivity, it.message, Toast.LENGTH_SHORT).show()
+                }.addOnSuccessListener {
+                    if (!it.exists()) {
+                        Toast.makeText(this@ProfileActivity, "User not found", Toast.LENGTH_SHORT).show()
+                    } else {
+                        if (prefManager.getRole() == "patient") {
+                            val user = it.toObject(Patient::class.java)
+                            txtName.text = user?.name
+                            txtEmail.text = user?.email
+                            txtInfo.text = "${user?.sex}, ${user?.age}"
+                        } else {
+                            val user = it.toObject(Dentist::class.java)
+                            txtName.text = user?.name
+                            txtEmail.text = user?.email
+                            txtInfo.text = "${user?.city}, ${user?.address}"
+                        }
+                    }
+                }
+
             btnBack.setOnClickListener {
                 finish()
             }

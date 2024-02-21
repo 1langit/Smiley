@@ -17,7 +17,7 @@ class PatientContactAdapter(
         fun bind(patient: Patient) {
             with(binding) {
                 txtName.text = patient.name
-                txtInfo.text = patient.email
+                txtInfo.text = "Patient"
             }
 
             itemView.setOnClickListener {

@@ -11,7 +11,7 @@ class PrefManager private constructor(context: Context) {
         private const val PREFS_FILENAME = "authAppPrefs"
         private const val KEY_IS_LOGGED_IN = "isLoggedIn"
         private const val KEY_UID = "uid"
-        private const val KEY_EMAIL = "email"
+        private const val KEY_NAME = "name"
         private const val KEY_ROLE = "role"
 
         @Volatile
@@ -46,9 +46,9 @@ class PrefManager private constructor(context: Context) {
         editor.apply()
     }
 
-    fun saveEmail(email: String) {
+    fun saveName(name: String) {
         val editor = sharedPreferences.edit()
-        editor.putString(KEY_EMAIL, email)
+        editor.putString(KEY_NAME, name)
         editor.apply()
     }
 
@@ -62,8 +62,8 @@ class PrefManager private constructor(context: Context) {
         return sharedPreferences.getString(KEY_UID, "") ?: ""
     }
 
-    fun getEmail(): String {
-        return sharedPreferences.getString(KEY_EMAIL, "") ?: ""
+    fun getName(): String {
+        return sharedPreferences.getString(KEY_NAME, "") ?: ""
     }
 
     fun getRole(): String {
