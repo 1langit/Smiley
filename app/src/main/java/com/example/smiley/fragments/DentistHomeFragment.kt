@@ -17,13 +17,14 @@ import com.example.smiley.databinding.FragmentDentistHomeBinding
 import com.example.smiley.models.Article
 import com.example.smiley.utils.ArticleAdapter
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.AggregateSource
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DentistHomeFragment : Fragment() {
 
     private lateinit var binding: FragmentDentistHomeBinding
     private lateinit var firebaseAuth: FirebaseAuth
-    private val articleCollection = FirebaseFirestore.getInstance().collection("education")
+    private lateinit var firestore: FirebaseFirestore
     private val articeListLiveData: MutableLiveData<List<Article>> by lazy {
         MutableLiveData<List<Article>>()
     }
@@ -34,9 +35,19 @@ class DentistHomeFragment : Fragment() {
     ): View? {
         binding = FragmentDentistHomeBinding.inflate(layoutInflater)
         firebaseAuth = FirebaseAuth.getInstance()
+        firestore = FirebaseFirestore.getInstance()
 
         getMyArticles()
         showMyArticles()
+
+        firestore.collection("patient")
+            .count()
+            .get(AggregateSource.SERVER)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    binding.txtCount.text = task.result.count.toString()
+                }
+            }
 
         with(binding) {
             btnAccount.setOnClickListener {
@@ -76,10 +87,11 @@ class DentistHomeFragment : Fragment() {
     }
 
     private fun getMyArticles() {
-        articleCollection.whereEqualTo("writerUid", firebaseAuth.currentUser?.uid!!)
+        firestore.collection("education")
+            .whereEqualTo("writerUid", firebaseAuth.currentUser?.uid!!)
             .addSnapshotListener { snapshots, error ->
                 if (error != null) {
-                    Log.d("Dentist list", "error listening to changes")
+                    Log.d("article list", "error listening to changes")
                 }
                 if (snapshots != null) {
                     val articleList = snapshots.toObjects(Article::class.java)

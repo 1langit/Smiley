@@ -50,6 +50,7 @@
                 android:padding="16dp">
 
                 <TextView
+                    android:id="@+id/txt_count"
                     style="@style/TextHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
