@@ -9,6 +9,7 @@ import com.example.smiley.databinding.ActivityRegisterBinding
 import com.example.smiley.models.Patient
 import com.example.smiley.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
 
 class RegisterActivity : AppCompatActivity() {
@@ -66,6 +67,7 @@ class RegisterActivity : AppCompatActivity() {
                                 Toast.makeText(this@RegisterActivity, "Register success", Toast.LENGTH_SHORT).show()
                                 prefManager.setLoggedIn(true)
                                 prefManager.saveRole("patient")
+                                prefManager.saveName(name)
 
                                 val newIntent = Intent(this@RegisterActivity, PatientDashboardActivity::class.java)
                                 newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

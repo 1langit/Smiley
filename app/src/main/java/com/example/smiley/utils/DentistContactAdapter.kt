@@ -17,7 +17,7 @@ class DentistContactAdapter(
         fun bind(dentist: Dentist) {
             with(binding) {
                 txtName.text = dentist.name
-                txtInfo.text = dentist.city
+                txtInfo.text = "${dentist.clinicName}, ${dentist.city}"
             }
 
             itemView.setOnClickListener {

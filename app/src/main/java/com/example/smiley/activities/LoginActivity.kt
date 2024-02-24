@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smiley.databinding.ActivityLoginBinding
+import com.example.smiley.models.Dentist
+import com.example.smiley.models.Patient
 import com.example.smiley.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.toObject
 
 class LoginActivity : AppCompatActivity() {
 
@@ -47,6 +50,13 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.makeText(this@LoginActivity, "Log in success", Toast.LENGTH_SHORT).show()
                                 prefManager.setLoggedIn(true)
                                 prefManager.saveRole(role)
+                                prefManager.saveName(
+                                    if (role == "patient") {
+                                        it.toObject(Patient::class.java)!!.name
+                                    } else {
+                                        it.toObject(Dentist::class.java)!!.name
+                                    }
+                                )
 
                                 val newIntent = Intent(
                                     this@LoginActivity,

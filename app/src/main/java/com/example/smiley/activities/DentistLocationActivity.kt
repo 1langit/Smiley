@@ -9,6 +9,7 @@ import com.example.smiley.databinding.ActivityDentistLocationBinding
 import com.example.smiley.models.Dentist
 import com.example.smiley.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.firestore.FirebaseFirestore
 
 class DentistLocationActivity : AppCompatActivity() {
@@ -48,6 +49,7 @@ class DentistLocationActivity : AppCompatActivity() {
                             Toast.makeText(this@DentistLocationActivity, "Register success", Toast.LENGTH_SHORT).show()
                             prefManager.setLoggedIn(true)
                             prefManager.saveRole("dentist")
+                            prefManager.saveName(name)
 
                             val newIntent = Intent(this@DentistLocationActivity, DentistDashboardActivity::class.java)
                             newIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)

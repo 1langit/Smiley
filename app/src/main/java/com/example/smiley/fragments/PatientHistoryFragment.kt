@@ -14,6 +14,7 @@ import com.example.smiley.models.Classification
 import com.example.smiley.utils.CaptureHistoryAdapter
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 
 class PatientHistoryFragment : Fragment() {
 
@@ -57,7 +58,9 @@ class PatientHistoryFragment : Fragment() {
     }
 
     private fun getMyHistory() {
-        classificationCollection.whereEqualTo("uid", uid).addSnapshotListener { snapshots, error ->
+        classificationCollection.whereEqualTo("uid", uid)
+            .orderBy("date", Query.Direction.DESCENDING)
+            .addSnapshotListener { snapshots, error ->
             if (error != null) {
                 Log.d("list", "error listening to changes")
             }

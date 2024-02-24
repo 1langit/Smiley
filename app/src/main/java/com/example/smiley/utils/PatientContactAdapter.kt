@@ -4,24 +4,25 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.smiley.databinding.ItemContactBinding
+import com.example.smiley.models.ChatRoom
 import com.example.smiley.models.Patient
 
-private typealias OnClickPatient = (Patient) -> Unit
+private typealias OnClickPatient = (ChatRoom) -> Unit
 
 class PatientContactAdapter(
-    private val patientList: List<Patient>,
+    private val patientList: List<ChatRoom>,
     private val onClickPatient: OnClickPatient
 ): RecyclerView.Adapter<PatientContactAdapter.ItemPatientContactViewHolder>() {
 
     inner class ItemPatientContactViewHolder(private val binding: ItemContactBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(patient: Patient) {
+        fun bind(chatRoom: ChatRoom) {
             with(binding) {
-                txtName.text = patient.name
+                txtName.text = chatRoom.patientName
                 txtInfo.text = "Patient"
             }
 
             itemView.setOnClickListener {
-                onClickPatient(patient)
+                onClickPatient(chatRoom)
             }
         }
     }

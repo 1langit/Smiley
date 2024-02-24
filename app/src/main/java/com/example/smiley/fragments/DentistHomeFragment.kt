@@ -23,24 +23,24 @@ import com.google.firebase.firestore.FirebaseFirestore
 class DentistHomeFragment : Fragment() {
 
     private lateinit var binding: FragmentDentistHomeBinding
-    private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private val articeListLiveData: MutableLiveData<List<Article>> by lazy {
         MutableLiveData<List<Article>>()
     }
+    private val uid = FirebaseAuth.getInstance().currentUser!!.uid
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDentistHomeBinding.inflate(layoutInflater)
-        firebaseAuth = FirebaseAuth.getInstance()
         firestore = FirebaseFirestore.getInstance()
 
         getMyArticles()
         showMyArticles()
 
-        firestore.collection("patient")
+        firestore.collection("chatroom")
+            .whereEqualTo("dentistUid", uid)
             .count()
             .get(AggregateSource.SERVER)
             .addOnCompleteListener { task ->
@@ -88,7 +88,7 @@ class DentistHomeFragment : Fragment() {
 
     private fun getMyArticles() {
         firestore.collection("education")
-            .whereEqualTo("writerUid", firebaseAuth.currentUser?.uid!!)
+            .whereEqualTo("writerUid", uid)
             .addSnapshotListener { snapshots, error ->
                 if (error != null) {
                     Log.d("article list", "error listening to changes")
