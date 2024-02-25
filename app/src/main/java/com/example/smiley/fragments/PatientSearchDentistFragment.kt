@@ -41,22 +41,26 @@ class PatientSearchDentistFragment : Fragment() {
         prefManager = PrefManager.getInstance(requireContext())
         firestore = FirebaseFirestore.getInstance()
         getAllDentist()
-        showDentistList()
+        showDentistList("")
 
         with(binding) {
             btnBack.setOnClickListener {
                 findNavController().navigateUp()
             }
+
+            boxSearch.setEndIconOnClickListener {
+                showDentistList(edtSearch.text.toString().lowercase())
+            }
         }
         return binding.root
     }
 
-    private fun showDentistList() {
+    private fun showDentistList(keyword: String) {
         dentistListLiveData.observe(viewLifecycleOwner) { dentistList ->
-            val dentistAdapter = DentistContactAdapter(dentistList) { dentist ->
-//                val newIntent = Intent(requireContext(), ChatActivity::class.java)
-//                newIntent.putExtra("id", dentist.uid)
-//                startActivity(newIntent)
+            val filteredList = dentistList.filter {
+                it.name.lowercase().contains(keyword) || it.clinicName.lowercase().contains(keyword) || it.clinicAddress.lowercase().contains(keyword)
+            }
+            val dentistAdapter = DentistContactAdapter(filteredList) { dentist ->
 
                 firestore.collection("chatroom")
                     .where(

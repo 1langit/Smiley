@@ -56,21 +56,9 @@ class ChatActivity : AppCompatActivity() {
                         senderUid = uid,
                         recieverUid = otherUserId,
                         message = message,
-                        time = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm"))
+                        displayTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("HH:mm")),
+                        time = LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME)
                     )
-
-//                    firestore.collection("chat")
-//                        .add(chat)
-//                        .addOnFailureListener {
-//                            Toast.makeText(this@ChatActivity, it.message, Toast.LENGTH_SHORT).show()
-//                        }.addOnSuccessListener { document ->
-//                            chat.id = document.id
-//                            document.set(chat).addOnFailureListener {
-//                                Toast.makeText(this@ChatActivity, it.message, Toast.LENGTH_SHORT).show()
-//                            }.addOnSuccessListener {
-//                                edtMessage.setText("")
-//                            }
-//                        }
 
                     firestore.collection("chatroom")
                         .document(chatroomId)
@@ -81,9 +69,8 @@ class ChatActivity : AppCompatActivity() {
                         }.addOnSuccessListener { document ->
                             document.update("id", document.id).addOnFailureListener {
                                 Toast.makeText(this@ChatActivity, it.message, Toast.LENGTH_SHORT).show()
-                            }.addOnSuccessListener {
-                                edtMessage.setText("")
                             }
+                            edtMessage.setText("")
                         }
                 }
             }
@@ -92,13 +79,6 @@ class ChatActivity : AppCompatActivity() {
 
     private fun showChat() {
         chatLiveData.observe(this@ChatActivity) { chatList ->
-//            val filteredUserChat = chatList.filter {
-//                (it.senderUid == uid || it.senderUid == if (prefManager.getRole() == "patient") dentist.uid else patient.uid)
-//                        && (it.recieverUid == uid || it.recieverUid == if (prefManager.getRole() == "patient") dentist.uid else patient.uid)
-//            }.sortedBy {
-//                it.time
-//            }
-
             binding.rvChat.apply {
                 adapter = ChatAdapter(chatList)
                 layoutManager = LinearLayoutManager(
@@ -107,26 +87,15 @@ class ChatActivity : AppCompatActivity() {
                     false
                 )
             }
+            if (chatList.size > 0) binding.rvChat.scrollToPosition(chatList.size - 1)
         }
     }
 
     private fun getUserChat() {
-//        firestore.collection("chat")
-//            .whereIn("senderUid", listOf(uid, dentist.uid))
-//            .whereIn("receiverUid", listOf(uid, dentist.uid))
-//            .orderBy("time")
-//            .addSnapshotListener { snapshots, error ->
-//                if (error != null) {
-//                    Log.d("Chat", "error listening to changes")
-//                }
-//                if (snapshots != null) {
-//                    val chatList = snapshots.toObjects(Chat::class.java)
-//                    chatLiveData.postValue(chatList)
-//                }
-//        }
         firestore.collection("chatroom")
             .document(chatroomId)
             .collection("chat")
+            .orderBy("time")
             .addSnapshotListener { snapshots, error ->
                 if (error != null) {
                     Log.d("Chat", "error listening to changes")
@@ -148,33 +117,13 @@ class ChatActivity : AppCompatActivity() {
                 if (it.exists()) {
                     val chatroom = it.toObject(ChatRoom::class.java)!!
                     if (prefManager.getRole() == "patient") {
-                        binding.txtTitle.text = chatroom.dentistName
+                        binding.txtTitle.text = "${chatroom.dentistName} (dentist)"
                     } else {
-                        binding.txtTitle.text = chatroom.patientName
+                        binding.txtTitle.text = "${chatroom.patientName} (patient)"
                     }
                 } else {
                     Toast.makeText(this@ChatActivity, "User not found", Toast.LENGTH_SHORT).show()
                 }
             }
-//        if (prefManager.getRole() == "patient") {
-//            firestore.collection("dentist")
-//                .document(intent.getStringExtra("id")!!)
-//                .get()
-//                .addOnFailureListener {
-//                    Toast.makeText(this@ChatActivity, it.message, Toast.LENGTH_SHORT).show()
-//                }.addOnSuccessListener {
-//                    if (it.exists()) {
-//                        if (prefManager.getRole() == "patient") {
-//                            dentist = it.toObject(Dentist::class.java)!!
-//                            binding.txtTitle.text = dentist.name
-//                        } else {
-//                            patient = it.toObject(Patient::class.java)!!
-//                            binding.txtTitle.text = patient.name
-//                        }
-//                    } else {
-//                        Toast.makeText(this@ChatActivity, "User not found", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//        }
     }
 }

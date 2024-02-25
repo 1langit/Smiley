@@ -33,29 +33,21 @@ class EducationListActivity : AppCompatActivity() {
                 finish()
             }
 
-//            edtSearch.setOnEditorActionListener { _, _, _ ->
-//                if (actionId == EditorInfo.IME_ACTION_DONE) {
-//                    val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//                    imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
-//                    showArticles(edtSearch.text.toString())
-//                    Toast.makeText(this@EducationListActivity, "jrsdrj", Toast.LENGTH_SHORT).show()
-//                    true
-//                } else {
-//                    false
-//                }
-//            }
+            boxSearch.setEndIconOnClickListener {
+                showArticles(edtSearch.text.toString().lowercase())
+            }
         }
     }
 
-    private fun showArticles(searchKeyword: String) {
+    private fun showArticles(keyword: String) {
         articeListLiveData.observe(this@EducationListActivity) { articleList ->
-//            val filteredArticleList = articleList.filter {
-//                it.title.contains(searchKeyword) || it.content.contains(searchKeyword)
-//            }.sortedBy {
-//                it.dateCreated
-//            }
+            val filteredArticleList = articleList.filter {
+                it.title.lowercase().contains(keyword) || it.content.lowercase().contains(keyword)
+            }.sortedBy {
+                it.dateCreated
+            }
 
-            val articleAdapter = ArticleAdapter(articleList) { article ->
+            val articleAdapter = ArticleAdapter(filteredArticleList) { article ->
                 val newIntent = Intent(this@EducationListActivity, ReadEducationActivity::class.java)
                 newIntent.putExtra("id", article.id)
                 startActivity(newIntent)

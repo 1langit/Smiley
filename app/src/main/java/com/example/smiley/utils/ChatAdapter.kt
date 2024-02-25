@@ -53,7 +53,7 @@ class ChatAdapter(
             binding.apply {
                 chat.also {
                     txtMessage.text = chat.message
-                    txtTime.text = chat.time
+                    txtTime.text = chat.displayTime
                 }
             }
         }
@@ -64,7 +64,7 @@ class ChatAdapter(
             binding.apply {
                 chat.also {
                     txtMessage.text = chat.message
-                    txtTime.text = chat.time
+                    txtTime.text = chat.displayTime
                 }
             }
         }

@@ -60,7 +60,6 @@ class DentistChatFragment : Fragment() {
     private fun getRelatedPatient() {
         firestore.collection("chatroom")
             .whereEqualTo("dentistUid", uid)
-            .orderBy("time", Query.Direction.DESCENDING)
             .addSnapshotListener { snapshots, error ->
                 if (error != null) {
                     Log.d("Patient list", "error listening to changes")

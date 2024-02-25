@@ -5,5 +5,6 @@ data class Chat(
     var senderUid: String = "",
     var recieverUid: String = "",
     var message: String = "",
+    var displayTime: String = "",
     var time: String = ""
 )

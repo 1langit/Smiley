@@ -27,6 +27,8 @@ class PatientJournalActivity : AppCompatActivity() {
         firestore = FirebaseFirestore.getInstance()
 
         with(binding) {
+            txtDate.text = LocalDateTime.now().format(DateTimeFormatter.ofPattern("d MMM yyyy"))
+
             btnBack.setOnClickListener {
                 finish()
             }

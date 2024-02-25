@@ -21,8 +21,7 @@
         android:id="@+id/txt_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:textSize="16sp" />
+        android:text="Name" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_name"
@@ -41,8 +40,7 @@
         android:id="@+id/txt_city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="City"
-        android:textSize="16sp" />
+        android:text="City" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_city"
@@ -61,8 +59,7 @@
         android:id="@+id/txt_sex"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sex"
-        android:textSize="16sp" />
+        android:text="Sex" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_sex"
@@ -83,8 +80,7 @@
         android:id="@+id/txt_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Age"
-        android:textSize="16sp" />
+        android:text="Age" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_age"
@@ -103,8 +99,7 @@
         android:id="@+id/txt_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
-        android:textSize="16sp" />
+        android:text="Email" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_email"
@@ -123,8 +118,7 @@
         android:id="@+id/txt_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Password"
-        android:textSize="16sp"/>
+        android:text="Password" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_password"
@@ -143,8 +137,7 @@
         android:id="@+id/txt_confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm Password"
-        android:textSize="16sp" />
+        android:text="Confirm Password" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/box_confirm_password"
