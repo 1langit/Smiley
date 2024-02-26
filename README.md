@@ -20,6 +20,9 @@ Smiley stands out with its innovative approach to dental health, leveraging cutt
 - **⚙ Flask Backend Integration**: The app seamlessly integrates with a Flask backend API hosted on Google Cloud. The backend handles various functionalities, including AI-powered dental checks and other data processing tasks.
 - **🔥 Firebase Integration**: Leverage Firebase Authentication for authentication services and Firebase Firestore for efficient data storage. Firebase ensures a secure and scalable infrastructure for user management and data handling.
 
+## Download
+Smiley APK can be downloaded [here](https://github.com/1langit/Smiley/blob/master/apk/smiley.apk)
+
 ## Usage
 1. Clone this repository
    ```
