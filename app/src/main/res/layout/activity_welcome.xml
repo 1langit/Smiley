@@ -14,22 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="32sp"
-        android:text="Smiley" />
-
-<!--    <ImageView-->
-<!--        android:id="@+id/img_illust"-->
-<!--        android:layout_width="260dp"-->
-<!--        android:layout_height="260dp"-->
-<!--        android:layout_margin="40dp"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        android:src="@drawable/placeholder" />-->
+        android:text="@string/app_name" />
 
     <TextView
         android:id="@+id/txt_subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:text="Your smile, your heatlh"
+        android:text="@string/your_smile_your_heatlh"
         android:textSize="16sp" />
 
     <Button
@@ -37,13 +29,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/ButtonPrimary"
-        android:text="I am a patient" />
+        android:text="@string/btn_patient" />
 
     <Button
         android:id="@+id/btn_dentist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/ButtonSecondary"
-        android:text="I am a dentist" />
+        android:text="@string/btn_dentist" />
 
 </LinearLayout>

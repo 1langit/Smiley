@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Journal"
+        android:text="@string/journal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:id="@+id/txt_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dental checkup 29 feb 24"
+        android:text="@string/date"
         android:textStyle="bold"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="0dp"
-        android:text="I brushed my teeth twice a day"
+        android:text="@string/check_brushed_my_teeth"
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/txt_date" />
@@ -68,7 +68,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="0dp"
-        android:text="I don\'t have a dental problem"
+        android:text="@string/check_dental_problem"
         app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check1" />
 
@@ -78,7 +78,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
         android:minHeight="0dp"
-        android:text="I consume less sugary and acidic\nfoods/drinks"
+        android:text="@string/checl_consume_less_sugary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:minHeight="0dp"
-        android:text="I have a check up for the day"
+        android:text="@string/check_have_a_check_up"
         app:layout_constraintStart_toStartOf="@+id/check3"
         app:layout_constraintTop_toBottomOf="@+id/check3" />
 
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Save"
+        android:text="@string/save"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

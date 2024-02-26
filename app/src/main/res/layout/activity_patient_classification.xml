@@ -13,7 +13,7 @@
         style="@style/TextHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AI Classification Result"
+        android:text="@string/ai_classification_result"
         android:layout_marginTop="12dp" />
 
     <ImageView
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:textStyle="bold"
         android:textAlignment="center"
-        android:text="Classification"
+        android:text="@string/classification"
         android:layout_marginTop="20dp" />
 
     <TextView
@@ -37,13 +37,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+        android:text="@string/lorem_ipsum" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"
-        android:text="Still not statisfied?"
+        android:text="@string/still_not_statisfied"
         android:layout_marginTop="48dp" />
 
     <Button
@@ -51,7 +51,7 @@
         style="@style/ButtonPrimary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Consult with Dentist"
+        android:text="@string/consult_with_dentist"
         android:layout_marginTop="8dp" />
 
     <Button
@@ -59,6 +59,6 @@
         style="@style/ButtonSecondary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="@string/back" />
 
 </LinearLayout>

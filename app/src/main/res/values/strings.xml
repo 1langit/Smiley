@@ -1,7 +1,75 @@
 <resources>
     <string name="app_name">Smiley</string>
+    <string name="your_smile_your_heatlh">Your smile, your heatlh</string>
+    <string name="btn_patient">I am a patient</string>
+    <string name="btn_dentist">I am a dentist</string>
+    <string name="on_boarding_title">Welcome to Smiley!</string>
+    <string name="on_boarding_subtitle">Smiley is a smart dental app that helps you manage your dental hygiene. Please login or sign up to continue</string>
+
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="new_password">New password</string>
+    <string name="register">Register</string>
+    <string name="name">Name</string>
+    <string name="city">City</string>
+    <string name="sex">Sex</string>
+    <string name="age">Age</string>
+    <string name="location">Location</string>
+    <string name="clinic_name">Clinic name</string>
+    <string name="clinic_address">Clinic address</string>
+    <string name="daily_checkup">Daily checkup</string>
+    <string name="classification">Classification</string>
+    <string name="still_not_statisfied">Still not statisfied?</string>
+    <string name="type_message">Type message</string>
+    <string name="search">Search</string>
+
+    <string name="log_in">Log In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="log_out">Log Out</string>
+    <string name="back">Back</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="classify">Classify</string>
+    <string name="consult_with_dentist">Consult with Dentist</string>
+    <string name="dentist_consult">Dentist Consult</string>
+    <string name="select_image">Select Image</string>
+    <string name="write_article">Write Article</string>
+    <string name="write_education">Write education</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="capture">Capture</string>
+    <string name="capture_history">Capture History</string>
+    <string name="profile">Profile</string>
+    <string name="journal">Journal</string>
+    <string name="education">Education</string>
+    <string name="my_articles">My Articles</string>
+    <string name="dentist">Dentist</string>
+    <string name="ai_classification_result">AI Classification Result</string>
+    <string name="chat">Chat</string>
+
+    <string name="days_of_no_dental_problem">Days of no dental problem</string>
+    <string name="patients_contacted_you">Patients contacted you</string>
     <string name="capture_hint">Select an image and tap \'Classify\' to check \ndental condition</string>
+    <string name="capture_history_empty">Dental check from \'Capture\' will\nshow up here</string>
+    <string name="dentist_not_found">Dentist not found</string>
+    <string name="article_not_found">Article not found</string>
+    <string name="chat_empty">Chat empty</string>
+
     <string name="journal_info">Each color of the box represents the \“mood\” of the date. The better the mood the bigger the score, which means you have better dental health for the day! Click on the individual date to learn more.</string>
+    <string name="check_brushed_my_teeth">I brushed my teeth twice a day</string>
+    <string name="check_dental_problem">I don\'t have a dental problem</string>
+    <string name="checl_consume_less_sugary">I consume less sugary and acidic\nfoods/drinks</string>
+    <string name="check_have_a_check_up">I have a check up for the day</string>
+
+    <string name="_0">0</string>
+    <string name="date">Date</string>
+    <string name="info">Info</string>
+    <string name="article_title">Article Title</string>
+    <string name="article_content">Article content</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
 
     <string-array name="sex">
         <item>Male</item>

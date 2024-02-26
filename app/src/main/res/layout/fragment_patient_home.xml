@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Dashboard"
+            android:text="@string/dashboard"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -55,7 +55,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:text="0"
+                    android:text="@string/_0"
                     android:textColor="@color/white"
                     android:textSize="28sp" />
 
@@ -63,7 +63,7 @@
                     style="@style/TextHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Days of no dental problem"
+                    android:text="@string/days_of_no_dental_problem"
                     android:textColor="@color/white" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
@@ -76,7 +76,7 @@
             android:drawableTop="@drawable/ic_dentistry"
             android:layout_marginTop="4dp"
             android:paddingVertical="12dp"
-            android:text="Dentist Consult"
+            android:text="@string/dentist_consult"
             app:layout_constraintEnd_toStartOf="@+id/btn_education"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintHorizontal_chainStyle="spread"
@@ -92,7 +92,7 @@
             android:drawableTop="@drawable/ic_newsmode"
             android:layout_marginTop="4dp"
             android:paddingVertical="12dp"
-            android:text="Education"
+            android:text="@string/education"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toEndOf="@+id/btn_dentist"
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="20dp"
-            android:text="Journal"
+            android:text="@string/journal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_dentist" />
 
@@ -142,7 +142,7 @@
                     android:layout_marginBottom="12dp"
                     android:layout_marginHorizontal="28dp"
                     android:drawableEnd="@drawable/ic_round_arrow_forward"
-                    android:text="Daily checkup" />
+                    android:text="@string/daily_checkup" />
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
     </androidx.constraintlayout.widget.ConstraintLayout>
